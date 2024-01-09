@@ -16,6 +16,9 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
+
+        // Appel de la fonction OnSuccess pour afficher la Modal "Message Envoyé"
+        onSuccess();
       } catch (err) {
         setSending(false);
         onError(err);
@@ -29,10 +32,12 @@ const Form = ({ onSuccess, onError }) => {
         <div className="col">
           <Field placeholder="" label="Nom" />
           <Field placeholder="" label="Prénom" />
+
+          {/* Correction orthographe du mot "Personel" */} 
           <Select
-            selection={["Personel", "Entreprise"]}
+            selection={["Personnel", "Entreprise"]}
             onChange={() => null}
-            label="Personel / Entreprise"
+            label="Personnel / Entreprise"
             type="large"
             titleEmpty
           />
