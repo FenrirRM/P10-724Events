@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Form from "./index";
 
-// Modification de decride 
+// Modification de describe 
 describe("When Form is created", () => {
   it("a list of input is displayed", async () => {
     render(<Form />);
