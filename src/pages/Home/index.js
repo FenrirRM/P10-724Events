@@ -19,6 +19,7 @@ const Page = () => {
   // on indique que last est le premier élément du tableau soit [0]
   const last = data?.events.sort((evtA, evtB) =>
     new Date(evtA.date) < new Date(evtB.date) ? 1 : -1)[0];
+    
   return <>
     <header>
       <Menu />
@@ -27,6 +28,8 @@ const Page = () => {
       <section className="SliderContainer">
         <Slider />
       </section>
+
+      {/* ajout de l'id "nos-services" */}
       <section className="ServicesContainer" id="nos-services">
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
@@ -56,10 +59,14 @@ const Page = () => {
           </ServiceCard>
         </div>
       </section>
+
+      {/* ajout de l'id "nos-realisations" */}
       <section className="EventsContainer" id="nos-realisations" data-testid="listEvents">
         <h2 className="Title">Nos réalisations</h2>
         <EventList />
       </section>
+
+      {/* ajout de l'id "notre-equipe" */}
       <section className="PeoplesContainer" id="notre-equipe" data-testid="listOfPeople">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
